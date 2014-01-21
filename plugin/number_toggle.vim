@@ -107,6 +107,13 @@ if ! exists ( 'g:UseNumberToggleTrigger' )
 	let g:UseNumberToggleTrigger = 1
 endif
 
+"added by aric to create a number toggle
+" IE: let g:NoNumber="<F3>"
+
+if exists('g:NoNumber')
+  exec "nnoremap <silent> " . g:NoNumber . " :call NoNumber()<cr>"
+endif
+
 if exists('g:NumberToggleTrigger')
 	exec "nnoremap <silent> " . g:NumberToggleTrigger . " :call NumberToggle()<cr>"
 elseif g:UseNumberToggleTrigger
